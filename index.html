@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Feedback</title>
+    <script>
+        function isReady(form){
+            if (form.message.value != "") {
+                return true;
+            }
+            else {
+                alert("Please include a message.");
+                form.message.focus();
+                return false;
+            }
+        }
+    </script>
+    <style>
+        h1 {text-align: center;}
+        form {text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>Send us a message!</h1>
+    <form name="feedbackForm" onSubmit="return isReady(this);" method="post" action="/cgi-bin/messageform.cgi">
+        <p><textarea name="message" rows="6" cols="20" wrap="wrap"></textarea></p>
+        <p><input type="submit" value="Submit"</p>
+        <input type="reset" value="Reset"></p>
+    </form>
+</body>
+</html>
